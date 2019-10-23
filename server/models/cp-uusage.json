@@ -20,14 +20,35 @@
     }
   },
   "validations": [],
-  "relations": {"accessTokens": {
-    "type": "hasMany",
-    "model": "AccessToken",
-    "foreignKey": "userId",
-    "options": {
-      "disableInclude": true
+  "relations": {
+    "accessTokens": {
+      "type": "hasMany",
+      "model": "AccessToken",
+      "foreignKey": "userId",
+      "options": {
+        "disableInclude": true
+      }
     }
-  }},
+  },
   "acls": [],
-  "methods": {}
+  "methods": {
+    "InsertDetails": {
+      "accepts": [],
+      "returns": [
+        {
+          "arg": "count",
+          "type": "string",
+          "root": false,
+          "description": ""
+        }
+      ],
+      "description": "Needs to insert data every 5s intervel",
+      "http": [
+        {
+          "path": "/insert",
+          "verb": "get"
+        }
+      ]
+    }
+  }
 }
